@@ -1,3 +1,5 @@
+## useState
+
 ### useState 기본값으로 props를 사용하면 안된다
 
 ```javascript
@@ -32,3 +34,18 @@ export default App;
 - useEffect로 props가 변경되었을 때, state를 변경해준다.
 
 [https://medium.com/@digruby/do-not-use-props-as-default-value-of-react-usestate-directly-818ee192f454](https://medium.com/@digruby/do-not-use-props-as-default-value-of-react-usestate-directly-818ee192f454)
+
+### 지연 초기 state
+
+```javascript
+const [count, setCount] = useState(window.localStorage.getItem(key));
+
+// 지연 초기 적용
+const [count, setCount] = useState(() => window.localStorage.getItem(key));
+```
+
+- 지연 초기? 값 대신 함수를 useState 인자로 넘김
+- 상태가 최초로 생성될 때만 실행되고, 이후 리렌더링 시에는 실행하지 않는다.
+- 초기값의 계산 비용이 클 때 사용
+
+[https://ui.toast.com/weekly-pick/ko_20201022](https://ui.toast.com/weekly-pick/ko_20201022)
