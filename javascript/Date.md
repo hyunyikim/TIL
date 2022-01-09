@@ -16,3 +16,20 @@ date.getTimezoneOffset(); // -540
 
 - UTC와 Date 객체에 지정된 Locale 시간과의 차이를 분 단위로 반환
 - UTC = KST + timezoneOffset
+
+### Date 생성자로 날짜 객체 생성하기
+
+```jsx
+// bad
+const date = new Date("2022-01-06 09:00:00");
+
+// good
+const date = new Date(Unix 타임스탬프 값);
+const date = new Date(년, 월, 일, 시간)
+```
+
+특정 일자를 지정해 날짜를 생성할 때 `yyyy-MM-dd HH:mm:ss` 형식의 문자열을 매개변수로 넘기는 식으로 주로 사용했는데, 모바일 브라우저와 사파리에서 Invalid Date가 발생했다.
+
+Date 생성자로 날짜 객체 생성시, 날짜 파싱 동작이 브라우저들 끼리 일관적이지 못하기 때문에 사용하지 않는 편이 좋다.
+
+[https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
