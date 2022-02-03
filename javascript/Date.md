@@ -33,3 +33,11 @@ const date = new Date(년, 월, 일, 시간)
 Date 생성자로 날짜 객체 생성시, 날짜 파싱 동작이 브라우저들 끼리 일관적이지 못하기 때문에 사용하지 않는 편이 좋다.
 
 [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
+
+### 달의 마지막 일자 구하기
+```js
+const date = new Date(2022, 1, 0);      // Mon Jan 31 2022 00:00:00 GMT+0900 (한국 표준시)
+
+new Date(년도, 구하고자 하는 달+1, 0);
+```
+- 주의, 달의 시작은 0부터(1월이 0, 12월이 11)
