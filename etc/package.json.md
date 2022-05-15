@@ -35,3 +35,17 @@
 
 [https://classic.yarnpkg.com/en/docs/dependency-types#toc-dev-dependencies](https://classic.yarnpkg.com/en/docs/dependency-types#toc-dev-dependencies)
 [https://www.daleseo.com/js-package-locks/](https://www.daleseo.com/js-package-locks/)
+
+## overrides
+```
+{
+  "overrides": {
+    "bar": {
+      "foo": "1.0.0"
+    }
+  }
+}
+```
+- 특정 패키지의 버전을 강제해서 덮어 씌울 수 있다. 
+- 위의 예에서는 bar에 연관되어 있는 foo의 버전을 1.0.0으로 강제한다. 
+[https://docs.npmjs.com/cli/v8/configuring-npm/package-json#overrides](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#overrides)
